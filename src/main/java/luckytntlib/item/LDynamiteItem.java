@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import luckytntlib.entity.LExplosiveProjectile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.dispenser.DispenseItemBehavior;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -22,7 +23,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.RegistryObject;
-
 /**
  * 
  * The LDynamiteItem is an important step in making a custom explosive projectile.
@@ -73,6 +73,8 @@ public class LDynamiteItem extends Item{
 		if(dynamite != null) {
 			LExplosiveProjectile dyn = dynamite.get().create(level);
 			dyn.setPos(x, y, z);
+
+			level.addParticle(ParticleTypes.FLAME, x,y,z ,0,0,0);
 			dyn.shoot(direction.x, direction.y, direction.z, power, 0);
 			dyn.setOwner(thrower);
 			level.addFreshEntity(dyn);
