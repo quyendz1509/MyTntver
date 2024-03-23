@@ -18,7 +18,7 @@ public class GeneralDynamiteEffect extends PrimedTNTEffect{
 
 	private final Supplier<RegistryObject<LDynamiteItem>> dynamite;
 	private final PrimedTNTEffect effect;
-	private ParticleOptions particles = ParticleTypes.SMOKE;
+	private ParticleOptions particles = ParticleTypes.FLAME;
 	
 	/**
 	 * 
