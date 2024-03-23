@@ -102,7 +102,7 @@ public abstract class PrimedTNTEffect{
 	 * @param entity  the {@link IExplosiveEntity} this PrimedTNTEffect belongs to.
 	 */
 	public void spawnParticles(IExplosiveEntity entity) {
-		entity.getLevel().addParticle(ParticleTypes.SMOKE, entity.x(), entity.y() + 0.5f, entity.z(), 0, 0, 0);
+		entity.getLevel().addParticle(ParticleTypes.FLAME, entity.x(), entity.y() + 0.5f, entity.z(), 0, 0, 0);
 	}
 	
 	/**
